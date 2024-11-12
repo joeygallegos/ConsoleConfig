@@ -8,12 +8,12 @@
       "alignment": "left",
       "segments": [
         {
-          "background": "#fd9636",
+          "background": "#767a8d",
           "foreground": "#fff",
           "style": "diamond",
           "powerline_symbol": "\ue0b0",
           "trailing_diamond": "\ue0b0",
-          "template": "{{ .UserName }} ",
+          "template": " {{ .UserName }} ",
           "type": "os"
         },
         {
@@ -31,18 +31,12 @@
           }
         },
         {
-          "type": "git",
-          "style": "powerline",
-          "powerline_symbol": "\ue0b0",
           "foreground": "#193549",
           "background": "#a09de8",
-          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} ",
-          "properties": {
-            "fetch_stash_count": true,
-            "fetch_status": true,
-            "fetch_upstream_icon": true,
-            "branch_icon": "\ue725 "
-          }
+          "powerline_symbol": "\ue0b0",
+          "style": "powerline",
+          "template": " {{ .UpstreamIcon }}{{ .HEAD }}{{ if gt .StashCount 0 }} {{ .StashCount }}{{ end }} ",
+          "type": "git"
         },
         {
           "background": "#6864dd",
@@ -84,7 +78,7 @@
             "{{ if gt .Code 0 }}#f1184c{{ end }}"
           ],
           "trailing_diamond": "\ue0b4",
-          "template": " \ue23a{{ if gt .Code 0 }}\uf00d{{ else }}\uf42e{{ end }} ",
+          "template": " {{ if gt .Code 0 }}\uf00d{{ else }}\uf42e{{ end }} ",
           "properties": {
             "always_enabled": true
           }
